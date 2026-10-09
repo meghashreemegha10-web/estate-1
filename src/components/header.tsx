@@ -8,14 +8,14 @@ export function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 h-20 border-b border-pine/10 bg-[#FFFEF2]/85 backdrop-blur-md text-ink transition-all">
+    <header className="sticky top-0 z-50 h-20 border-b border-white/10 bg-[#1F3630]/90 backdrop-blur-md text-[#FDFCEE] transition-all">
       <div className="mx-auto flex h-full max-w-7xl items-center justify-between gap-6 px-6 lg:px-12">
         {/* Brand Logo */}
         <Link to="/" className="group flex flex-col leading-tight" onClick={() => setOpen(false)}>
-          <span className="font-display text-2xl font-bold tracking-tight text-ink transition-colors group-hover:text-clay">
+          <span className="font-display text-2xl font-bold tracking-tight text-white transition-colors group-hover:text-terracotta">
             Global Mahanshi
           </span>
-          <span className="text-[11px] font-medium tracking-[0.18em] uppercase text-pine/70">
+          <span className="text-[11px] font-medium tracking-[0.18em] uppercase text-linen/70">
             Builders &amp; Architects
           </span>
         </Link>
@@ -29,7 +29,7 @@ export function Header() {
                 key={item.href}
                 to={item.href}
                 className={`ln text-sm font-medium tracking-wide transition-colors ${
-                  active ? "text-clay font-semibold" : "text-ink/80 hover:text-ink"
+                  active ? "text-terracotta font-semibold" : "text-linen/80 hover:text-white"
                 }`}
               >
                 {item.label}
@@ -40,8 +40,8 @@ export function Header() {
 
         {/* Right Actions */}
         <div className="hidden items-center gap-5 sm:flex">
-          <div className="hidden items-center gap-2 rounded-full border border-pine/15 bg-sand/60 px-3.5 py-1.5 text-xs font-medium text-pine/90 xl:flex">
-            <span className="dot size-2 rounded-full bg-emerald-600"></span>
+          <div className="hidden items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3.5 py-1.5 text-xs font-medium text-linen/90 backdrop-blur-sm xl:flex">
+            <span className="dot size-2 rounded-full bg-emerald-400"></span>
             <span>Open for Site Visits</span>
           </div>
 
@@ -49,7 +49,7 @@ export function Header() {
             href={whatsappGeneral}
             target="_blank"
             rel="noopener noreferrer"
-            className="sweep group relative inline-flex items-center gap-2 rounded-full bg-pine px-5 py-2.5 text-xs font-semibold tracking-wider uppercase text-linen shadow-sm transition-all duration-300 hover:bg-clay hover:shadow-md"
+            className="sweep group relative inline-flex items-center gap-2 rounded-full bg-clay px-5 py-2.5 text-xs font-semibold tracking-wider uppercase text-white shadow-md transition-all duration-300 hover:bg-terracotta hover:text-pine hover:shadow-lg"
           >
             <span>WhatsApp Us</span>
             <ArrowUpRight className="size-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -59,7 +59,7 @@ export function Header() {
         {/* Mobile Toggle */}
         <button
           type="button"
-          className="grid size-11 place-items-center rounded-full border border-pine/15 bg-sand/40 text-ink lg:hidden"
+          className="grid size-11 place-items-center rounded-full border border-white/15 bg-white/5 text-linen lg:hidden"
           aria-expanded={open}
           aria-label={open ? "Close" : "Menu"}
           onClick={() => setOpen((v) => !v)}
@@ -70,7 +70,7 @@ export function Header() {
 
       {/* Mobile Menu Dropdown */}
       {open ? (
-        <div className="absolute inset-x-0 top-20 border-b border-pine/15 bg-[#1F3630] text-linen shadow-2xl lg:hidden">
+        <div className="absolute inset-x-0 top-20 border-b border-white/15 bg-[#1F3630] text-linen shadow-2xl lg:hidden">
           <nav className="flex flex-col px-6 py-6" aria-label="Mobile">
             {nav.map((item) => (
               <Link

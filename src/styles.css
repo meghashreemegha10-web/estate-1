@@ -4,11 +4,13 @@
 @theme {
   --color-pine: #1F3630;
   --color-moss: #2B4A41;
-  --color-ink: #1D322D;
-  --color-paper: #FDFCEE;
-  --color-parchment: #FFFEF2;
+  --color-forest: #243F38;
+  --color-deep: #162824;
+  --color-ink: #FDFCEE;
+  --color-paper: #1F3630;
+  --color-parchment: #1F3630;
   --color-linen: #FDFCEE;
-  --color-sand: #F7F6E9;
+  --color-sand: #243F38;
   --color-clay: #FF7738;
   --color-terracotta: #F3AC85;
   --color-sage: #2B4A41;
@@ -24,16 +26,16 @@
 
 @layer base {
   html {
-    background: #FFFEF2;
-    color: #1D322D;
+    background: #1F3630;
+    color: #FDFCEE;
     font-family: var(--font-sans);
     scroll-behavior: smooth;
   }
   body {
     margin: 0;
     min-height: 100dvh;
-    background: #FFFEF2;
-    color: #1D322D;
+    background: #1F3630;
+    color: #FDFCEE;
     -webkit-font-smoothing: antialiased;
   }
   button:not(:disabled),
@@ -42,7 +44,7 @@
   }
   ::selection {
     background: #F3AC85;
-    color: #1D322D;
+    color: #1F3630;
   }
   :focus-visible {
     outline: 2px solid #FF7738;
@@ -52,35 +54,35 @@
 
 /* Glassmorphism Styles */
 .glass-panel {
-  background: rgba(255, 255, 255, 0.14);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.28);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
 }
 
 .glass-dark {
-  background: rgba(31, 54, 48, 0.82);
+  background: rgba(31, 54, 48, 0.85);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(243, 172, 133, 0.32);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(243, 172, 133, 0.25);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
 }
 
 .glass-card {
-  background: rgba(255, 254, 242, 0.92);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(29, 50, 45, 0.1);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  background: rgba(36, 63, 56, 0.75);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
 }
 
 .glass-card-dark {
-  background: rgba(43, 74, 65, 0.85);
+  background: rgba(43, 74, 65, 0.88);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border: 1px solid rgba(255, 255, 255, 0.18);
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.22);
 }
 
 /* Micro-interactions & PrettyHouse Animations */
@@ -127,7 +129,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(115deg, transparent 30%, rgba(255,254,242,.35) 50%, transparent 70%);
+  background: linear-gradient(115deg, transparent 30%, rgba(255,254,242,.25) 50%, transparent 70%);
   transform: translateX(-120%);
   transition: transform .9s cubic-bezier(.22,1,.36,1);
   pointer-events: none;
