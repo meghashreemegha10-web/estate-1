@@ -101,10 +101,9 @@ function Home() {
   return (
     <main className="bg-[#1F3630] text-[#FDFCEE] selection:bg-terracotta selection:text-pine">
       {/* ─────────────────────────────────────────────────────────────
-          1. HERO SECTION: WARM ARCHITECTURE EDITORIAL DESIGN WITH GLASS EFFECT
+          1. HERO SECTION: #1F3630
       ───────────────────────────────────────────────────────────── */}
       <section className="relative min-h-[92svh] overflow-hidden bg-[#1F3630] text-linen flex items-center border-b border-white/10">
-        {/* Background Layer with Architectural Visuals */}
         <div className="absolute inset-0 z-0">
           <img
             src={
@@ -117,14 +116,12 @@ function Home() {
             alt="Warm Architecture Editorial Villa - Global Mahanshi Builders"
             className="h-full w-full object-cover object-center transition-all duration-1000 filter brightness-95 contrast-105"
           />
-          {/* Subtle gradient scrim for text readability while preserving architectural view */}
           <div className="absolute inset-0 bg-gradient-to-r from-[#1F3630]/95 via-[#1F3630]/70 to-transparent sm:w-3/4 lg:w-3/5"></div>
           <div className="absolute inset-0 bg-gradient-to-t from-[#1F3630] via-transparent to-black/30"></div>
         </div>
 
         <div className="relative z-10 mx-auto max-w-7xl px-6 py-20 lg:py-28 lg:px-12 w-full">
           <div className="max-w-2xl">
-            {/* Top Glass Badge */}
             <div className="inline-flex items-center gap-2.5 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 backdrop-blur-md shadow-lg">
               <span className="dot size-2 rounded-full bg-emerald-400"></span>
               <span className="text-xs font-semibold tracking-widest uppercase text-linen/95">
@@ -132,7 +129,6 @@ function Home() {
               </span>
             </div>
 
-            {/* Editorial Heading */}
             <div className="mt-6">
               <p className="font-serif italic text-lg sm:text-xl text-terracotta tracking-wide">
                 Step into the vision with Global Mahanshi
@@ -155,7 +151,6 @@ function Home() {
               South Bengaluru — planned, built, and delivered under one roof by one trusted company.
             </p>
 
-            {/* Glass Visual Toggle */}
             <div className="mt-6 flex flex-wrap items-center gap-2">
               <span className="text-xs font-medium uppercase tracking-wider text-linen/60 mr-2">
                 View Concept:
@@ -195,7 +190,6 @@ function Home() {
               </button>
             </div>
 
-            {/* Primary Action Buttons */}
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <Link
                 to="/contact"
@@ -214,7 +208,6 @@ function Home() {
           </div>
         </div>
 
-        {/* Floating Glass Stats Bar at Bottom */}
         <div className="absolute bottom-6 right-6 left-6 z-20 hidden lg:block mx-auto max-w-7xl">
           <div className="glass-panel rounded-2xl p-4 sm:p-5 shadow-2xl">
             <div className="grid grid-cols-4 divide-x divide-white/15 text-center">
@@ -248,107 +241,109 @@ function Home() {
       </section>
 
       {/* ─────────────────────────────────────────────────────────────
-          2. ARCHITECTURAL THEMES & MATERIAL BOARD (#1F3630 PALETTE)
+          2. ARCHITECTURAL THEMES & PALETTES: ALTERNATE LIGHTER BG (#4B5E59)
       ───────────────────────────────────────────────────────────── */}
-      <section className="py-24 px-6 lg:px-12 max-w-7xl mx-auto border-b border-white/10">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-12 border-b border-white/10">
-          <div>
-            <span className="text-xs font-bold uppercase tracking-[0.2em] text-terracotta">
-              The Aesthetic Spectrum
-            </span>
-            <h2 className="mt-2 font-display text-4xl sm:text-5xl font-bold tracking-tight text-linen">
-              Architectural Themes &amp; Palettes
-            </h2>
+      <section className="py-24 px-6 lg:px-12 bg-[#4B5E59] text-linen border-b border-white/10">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-12 border-b border-white/20">
+            <div>
+              <span className="text-xs font-bold uppercase tracking-[0.2em] text-amber-200">
+                The Aesthetic Spectrum
+              </span>
+              <h2 className="mt-2 font-display text-4xl sm:text-5xl font-bold tracking-tight text-white">
+                Architectural Themes &amp; Palettes
+              </h2>
+            </div>
+            <p className="max-w-md text-sm text-linen/85 leading-relaxed">
+              From modern contemporary villas to legally approved plotted communities. Explore our
+              board of materials, streetscapes, and spatial concepts.
+            </p>
           </div>
-          <p className="max-w-md text-sm text-linen/70 leading-relaxed">
-            From modern contemporary villas to legally approved plotted communities. Explore our
-            board of materials, streetscapes, and spatial concepts.
-          </p>
-        </div>
 
-        <div className="mt-12 grid gap-10 lg:grid-cols-12 items-start">
-          {/* Theme List Tabs */}
-          <div className="lg:col-span-5 space-y-3">
-            {architecturalThemes.map((item, idx) => (
-              <button
-                key={item.id}
-                type="button"
-                onClick={() => setActiveTheme(idx)}
-                className={`w-full text-left p-5 rounded-2xl transition-all duration-300 border ${
-                  activeTheme === idx
-                    ? "bg-[#2B4A41] text-white border-terracotta shadow-xl scale-[1.02]"
-                    : "bg-white/5 hover:bg-white/10 text-linen border-white/10"
-                }`}
-              >
-                <div className="flex items-center justify-between">
-                  <span
-                    className={`font-mono text-xs font-bold ${
-                      activeTheme === idx ? "text-terracotta" : "text-clay"
-                    }`}
-                  >
-                    {item.id}
-                  </span>
-                  <span
-                    className={`text-[10px] uppercase font-bold tracking-widest px-2.5 py-0.5 rounded-full ${
-                      activeTheme === idx ? "bg-white/15 text-terracotta" : "bg-white/10 text-linen/70"
-                    }`}
-                  >
-                    {item.tag}
-                  </span>
-                </div>
-                <h3 className="mt-2 font-display text-xl font-bold tracking-tight">
-                  {item.title}
-                </h3>
-                <p
-                  className={`mt-1 text-xs font-medium ${
-                    activeTheme === idx ? "text-linen/90" : "text-linen/60"
+          <div className="mt-12 grid gap-10 lg:grid-cols-12 items-start">
+            {/* Theme List Tabs */}
+            <div className="lg:col-span-5 space-y-3">
+              {architecturalThemes.map((item, idx) => (
+                <button
+                  key={item.id}
+                  type="button"
+                  onClick={() => setActiveTheme(idx)}
+                  className={`w-full text-left p-5 rounded-2xl transition-all duration-300 border ${
+                    activeTheme === idx
+                      ? "bg-[#1F3630] text-white border-terracotta shadow-2xl scale-[1.02]"
+                      : "bg-[#1F3630]/40 hover:bg-[#1F3630]/65 text-linen border-white/15"
                   }`}
                 >
-                  {item.subtitle}
-                </p>
-              </button>
-            ))}
-          </div>
+                  <div className="flex items-center justify-between">
+                    <span
+                      className={`font-mono text-xs font-bold ${
+                        activeTheme === idx ? "text-terracotta" : "text-amber-200"
+                      }`}
+                    >
+                      {item.id}
+                    </span>
+                    <span
+                      className={`text-[10px] uppercase font-bold tracking-widest px-2.5 py-0.5 rounded-full ${
+                        activeTheme === idx ? "bg-white/15 text-terracotta" : "bg-white/10 text-linen/75"
+                      }`}
+                    >
+                      {item.tag}
+                    </span>
+                  </div>
+                  <h3 className="mt-2 font-display text-xl font-bold tracking-tight">
+                    {item.title}
+                  </h3>
+                  <p
+                    className={`mt-1 text-xs font-medium ${
+                      activeTheme === idx ? "text-linen/90" : "text-linen/70"
+                    }`}
+                  >
+                    {item.subtitle}
+                  </p>
+                </button>
+              ))}
+            </div>
 
-          {/* Active Theme Detailed Card Display */}
-          <div className="lg:col-span-7">
-            <div className="overflow-hidden rounded-3xl border border-white/15 bg-[#243F38]/90 shadow-2xl">
-              <div className="zoom relative h-[380px] sm:h-[440px] overflow-hidden">
-                <img
-                  src={architecturalThemes[activeTheme].image}
-                  alt={architecturalThemes[activeTheme].title}
-                  className="h-full w-full object-cover transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent"></div>
-                <div className="absolute bottom-6 left-6 right-6 text-white">
-                  <span className="text-xs font-bold uppercase tracking-widest text-terracotta">
-                    Palette {architecturalThemes[activeTheme].id}
-                  </span>
-                  <h4 className="font-display text-3xl font-bold mt-1">
-                    {architecturalThemes[activeTheme].title}
-                  </h4>
-                  <p className="mt-2 text-sm text-linen/90 leading-relaxed max-w-lg">
-                    {architecturalThemes[activeTheme].desc}
-                  </p>
-                  <p className="mt-3 text-xs font-medium text-amber-200">
-                    {architecturalThemes[activeTheme].subtitle}
-                  </p>
+            {/* Active Theme Detailed Card Display */}
+            <div className="lg:col-span-7">
+              <div className="overflow-hidden rounded-3xl border border-white/20 bg-[#1F3630]/90 shadow-2xl">
+                <div className="zoom relative h-[380px] sm:h-[440px] overflow-hidden">
+                  <img
+                    src={architecturalThemes[activeTheme].image}
+                    alt={architecturalThemes[activeTheme].title}
+                    className="h-full w-full object-cover transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent"></div>
+                  <div className="absolute bottom-6 left-6 right-6 text-white">
+                    <span className="text-xs font-bold uppercase tracking-widest text-terracotta">
+                      Palette {architecturalThemes[activeTheme].id}
+                    </span>
+                    <h4 className="font-display text-3xl font-bold mt-1">
+                      {architecturalThemes[activeTheme].title}
+                    </h4>
+                    <p className="mt-2 text-sm text-linen/90 leading-relaxed max-w-lg">
+                      {architecturalThemes[activeTheme].desc}
+                    </p>
+                    <p className="mt-3 text-xs font-medium text-amber-200">
+                      {architecturalThemes[activeTheme].subtitle}
+                    </p>
+                  </div>
                 </div>
-              </div>
-              <div className="p-6 bg-[#1A2E29] flex flex-wrap items-center justify-between gap-4 border-t border-white/10">
-                <div className="flex items-center gap-2">
-                  <span className="size-2.5 rounded-full bg-emerald-400"></span>
-                  <span className="text-xs font-semibold text-linen/85 uppercase tracking-wider">
-                    Available for Development &amp; Custom Builds
-                  </span>
+                <div className="p-6 bg-[#162723] flex flex-wrap items-center justify-between gap-4 border-t border-white/10">
+                  <div className="flex items-center gap-2">
+                    <span className="size-2.5 rounded-full bg-emerald-400"></span>
+                    <span className="text-xs font-semibold text-linen/90 uppercase tracking-wider">
+                      Available for Development &amp; Custom Builds
+                    </span>
+                  </div>
+                  <Link
+                    to="/contact"
+                    className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-terracotta hover:text-white transition-colors"
+                  >
+                    <span>Enquire for this theme</span>
+                    <ArrowUpRight className="size-3.5" />
+                  </Link>
                 </div>
-                <Link
-                  to="/contact"
-                  className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-terracotta hover:text-white transition-colors"
-                >
-                  <span>Enquire for this theme</span>
-                  <ArrowUpRight className="size-3.5" />
-                </Link>
               </div>
             </div>
           </div>
@@ -356,7 +351,7 @@ function Home() {
       </section>
 
       {/* ─────────────────────────────────────────────────────────────
-          3. FEATURED WORK / PLOTTED PROJECTS (#1F3630 PALETTE)
+          3. FEATURED WORK / PLOTTED PROJECTS: #1F3630
       ───────────────────────────────────────────────────────────── */}
       <section id="projects" className="py-24 bg-[#1F3630] text-[#FDFCEE] px-6 lg:px-12 border-b border-white/10">
         <div className="max-w-7xl mx-auto">
@@ -519,64 +514,66 @@ function Home() {
       </section>
 
       {/* ─────────────────────────────────────────────────────────────
-          4. WHO WE ARE & 4 FOUNDATIONAL PILLARS (#1F3630 PALETTE)
+          4. WHO WE ARE & 4 FOUNDATIONAL PILLARS: ALTERNATE LIGHTER BG (#4B5E59)
       ───────────────────────────────────────────────────────────── */}
-      <section className="py-24 px-6 lg:px-12 max-w-7xl mx-auto border-b border-white/10">
-        <div className="grid gap-12 lg:grid-cols-12 items-start">
-          <div className="lg:col-span-5">
-            <span className="text-xs font-bold uppercase tracking-[0.2em] text-terracotta">
-              Who We Are
-            </span>
-            <h2 className="mt-3 font-display text-4xl sm:text-5xl font-bold tracking-tight text-white leading-tight">
-              Building Trust Since Day One
-            </h2>
-            <p className="mt-6 text-base leading-relaxed text-linen/80">
-              Global Mahanshi Builders is a professionally managed construction and real estate
-              development company headquartered in Bengaluru, established in January 2026.
-            </p>
-            <p className="mt-4 text-base leading-relaxed text-linen/80">
-              With construction as our core strength, we build high-quality homes, develop residential
-              layouts, and provide customers with dependable end-to-end solutions — backed by
-              professional execution and transparent business practices.
-            </p>
-            <div className="mt-8 p-6 rounded-2xl bg-[#243F38]/80 border border-white/15 shadow-lg">
-              <p className="font-serif italic text-lg text-linen">
-                "A home is the most sacred investment a family makes. We ensure every square foot is
-                legally unshakeable and structurally timeless."
+      <section className="py-24 px-6 lg:px-12 bg-[#4B5E59] text-linen border-b border-white/10">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid gap-12 lg:grid-cols-12 items-start">
+            <div className="lg:col-span-5">
+              <span className="text-xs font-bold uppercase tracking-[0.2em] text-amber-200">
+                Who We Are
+              </span>
+              <h2 className="mt-3 font-display text-4xl sm:text-5xl font-bold tracking-tight text-white leading-tight">
+                Building Trust Since Day One
+              </h2>
+              <p className="mt-6 text-base leading-relaxed text-linen/90">
+                Global Mahanshi Builders is a professionally managed construction and real estate
+                development company headquartered in Bengaluru, established in January 2026.
               </p>
-              <p className="mt-3 text-xs font-bold tracking-wider uppercase text-terracotta">
-                — G. Muniswamy, Founder &amp; Managing Director
+              <p className="mt-4 text-base leading-relaxed text-linen/90">
+                With construction as our core strength, we build high-quality homes, develop residential
+                layouts, and provide customers with dependable end-to-end solutions — backed by
+                professional execution and transparent business practices.
               </p>
+              <div className="mt-8 p-6 rounded-2xl bg-[#1F3630]/85 border border-white/20 shadow-xl">
+                <p className="font-serif italic text-lg text-linen">
+                  "A home is the most sacred investment a family makes. We ensure every square foot is
+                  legally unshakeable and structurally timeless."
+                </p>
+                <p className="mt-3 text-xs font-bold tracking-wider uppercase text-terracotta">
+                  — G. Muniswamy, Founder &amp; Managing Director
+                </p>
+              </div>
             </div>
-          </div>
 
-          <div className="lg:col-span-7 space-y-4">
-            {principles.map((item, idx) => (
-              <div
-                key={item.title}
-                className="group p-6 rounded-2xl bg-white/5 border border-white/10 shadow-sm transition-all duration-300 hover:border-terracotta hover:bg-white/10"
-              >
-                <div className="flex items-start gap-4">
-                  <span className="font-mono text-sm font-bold text-terracotta shrink-0 mt-0.5">
-                    0{idx + 1}
-                  </span>
-                  <div>
-                    <h3 className="font-display text-2xl font-bold text-white group-hover:text-terracotta transition-colors">
-                      {item.title}
-                    </h3>
-                    <p className="mt-2 text-sm leading-relaxed text-linen/75">
-                      {item.body}
-                    </p>
+            <div className="lg:col-span-7 space-y-4">
+              {principles.map((item, idx) => (
+                <div
+                  key={item.title}
+                  className="group p-6 rounded-2xl bg-[#1F3630]/60 border border-white/15 shadow-md transition-all duration-300 hover:border-terracotta hover:bg-[#1F3630]/85"
+                >
+                  <div className="flex items-start gap-4">
+                    <span className="font-mono text-sm font-bold text-amber-200 shrink-0 mt-0.5">
+                      0{idx + 1}
+                    </span>
+                    <div>
+                      <h3 className="font-display text-2xl font-bold text-white group-hover:text-terracotta transition-colors">
+                        {item.title}
+                      </h3>
+                      <p className="mt-2 text-sm leading-relaxed text-linen/80">
+                        {item.body}
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* ─────────────────────────────────────────────────────────────
-          5. TRANSPARENT PACKAGES & PRICING (#1F3630 PALETTE)
+          5. TRANSPARENT PACKAGES & PRICING: #1F3630
       ───────────────────────────────────────────────────────────── */}
       <section className="py-24 bg-[#1F3630] px-6 lg:px-12 border-b border-white/10">
         <div className="max-w-7xl mx-auto">
@@ -744,134 +741,133 @@ function Home() {
       </section>
 
       {/* ─────────────────────────────────────────────────────────────
-          6. INTERACTIVE COST ESTIMATOR (#1F3630 PALETTE WITH GLASS PANEL)
+          6. INTERACTIVE COST ESTIMATOR: ALTERNATE LIGHTER BG (#4B5E59)
       ───────────────────────────────────────────────────────────── */}
-      <section className="py-24 px-6 lg:px-12 max-w-7xl mx-auto border-b border-white/10">
-        <div className="rounded-3xl bg-[#243F38]/85 text-linen p-8 sm:p-14 shadow-2xl relative overflow-hidden border border-white/15">
-          {/* Ambient glow */}
-          <div className="pointer-events-none absolute -bottom-24 -right-24 size-80 rounded-full bg-clay/20 blur-[100px]"></div>
+      <section className="py-24 px-6 lg:px-12 bg-[#4B5E59] text-linen border-b border-white/10">
+        <div className="max-w-7xl mx-auto">
+          <div className="rounded-3xl bg-[#1F3630]/90 text-linen p-8 sm:p-14 shadow-2xl relative overflow-hidden border border-white/20">
+            <div className="pointer-events-none absolute -bottom-24 -right-24 size-80 rounded-full bg-clay/20 blur-[100px]"></div>
 
-          <div className="relative z-10 grid gap-12 lg:grid-cols-12 items-center">
-            <div className="lg:col-span-6">
-              <span className="text-xs font-bold uppercase tracking-[0.2em] text-terracotta">
-                Interactive Planning
-              </span>
-              <h2 className="mt-2 font-display text-4xl sm:text-5xl font-bold text-white tracking-tight leading-tight">
-                Calculate Your Home Estimate in 10 Seconds
-              </h2>
-              <p className="mt-4 text-sm sm:text-base text-linen/80 leading-relaxed max-w-lg">
-                Choose your built-up square footage and finish package to generate an instant
-                transparent estimate with delivery milestones.
-              </p>
-
-              {/* Quick Preset Buttons */}
-              <div className="mt-8">
-                <p className="text-xs font-semibold uppercase tracking-wider text-linen/60 mb-3">
-                  Standard Bangalore Plot Presets:
+            <div className="relative z-10 grid gap-12 lg:grid-cols-12 items-center">
+              <div className="lg:col-span-6">
+                <span className="text-xs font-bold uppercase tracking-[0.2em] text-amber-200">
+                  Interactive Planning
+                </span>
+                <h2 className="mt-2 font-display text-4xl sm:text-5xl font-bold text-white tracking-tight leading-tight">
+                  Calculate Your Home Estimate in 10 Seconds
+                </h2>
+                <p className="mt-4 text-sm sm:text-base text-linen/85 leading-relaxed max-w-lg">
+                  Choose your built-up square footage and finish package to generate an instant
+                  transparent estimate with delivery milestones.
                 </p>
-                <div className="flex flex-wrap gap-2.5">
-                  {[
-                    { label: "20x40 (800 sq ft)", val: 800 },
-                    { label: "30x40 (1,200 sq ft)", val: 1200 },
-                    { label: "30x50 (1,500 sq ft)", val: 1500 },
-                    { label: "Duplex G+1 (2,400 sq ft)", val: 2400 },
-                  ].map((p) => (
-                    <button
-                      key={p.val}
-                      type="button"
-                      onClick={() => setArea(p.val)}
-                      className={`rounded-full px-3.5 py-1.5 text-xs font-medium transition-all ${
-                        area === p.val
-                          ? "bg-clay text-white shadow-md"
-                          : "border border-white/20 bg-white/5 text-linen/80 hover:bg-white/15"
-                      }`}
-                    >
-                      {p.label}
-                    </button>
-                  ))}
+
+                <div className="mt-8">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-linen/70 mb-3">
+                    Standard Bangalore Plot Presets:
+                  </p>
+                  <div className="flex flex-wrap gap-2.5">
+                    {[
+                      { label: "20x40 (800 sq ft)", val: 800 },
+                      { label: "30x40 (1,200 sq ft)", val: 1200 },
+                      { label: "30x50 (1,500 sq ft)", val: 1500 },
+                      { label: "Duplex G+1 (2,400 sq ft)", val: 2400 },
+                    ].map((p) => (
+                      <button
+                        key={p.val}
+                        type="button"
+                        onClick={() => setArea(p.val)}
+                        className={`rounded-full px-3.5 py-1.5 text-xs font-medium transition-all ${
+                          area === p.val
+                            ? "bg-clay text-white shadow-md"
+                            : "border border-white/20 bg-white/10 text-linen hover:bg-white/20"
+                        }`}
+                      >
+                        {p.label}
+                      </button>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
 
-            {/* Interactive Calculator Glass Panel */}
-            <div className="lg:col-span-6">
-              <div className="glass-panel rounded-2xl p-6 sm:p-8 space-y-6">
-                <div>
-                  <label className="text-xs font-semibold uppercase tracking-wider text-linen/80 block mb-2">
-                    Built-up Area: <span className="text-amber-200 font-bold">{area} sq.ft</span>
-                  </label>
-                  <input
-                    type="range"
-                    min="600"
-                    max="4000"
-                    step="50"
-                    value={area}
-                    onChange={(e) => setArea(Number(e.target.value))}
-                    className="w-full accent-terracotta cursor-pointer"
-                  />
-                  <div className="flex justify-between text-[11px] text-linen/50 mt-1">
-                    <span>600 sq.ft</span>
-                    <span>2,000 sq.ft</span>
-                    <span>4,000 sq.ft</span>
+              <div className="lg:col-span-6">
+                <div className="glass-panel rounded-2xl p-6 sm:p-8 space-y-6">
+                  <div>
+                    <label className="text-xs font-semibold uppercase tracking-wider text-linen/90 block mb-2">
+                      Built-up Area: <span className="text-amber-200 font-bold">{area} sq.ft</span>
+                    </label>
+                    <input
+                      type="range"
+                      min="600"
+                      max="4000"
+                      step="50"
+                      value={area}
+                      onChange={(e) => setArea(Number(e.target.value))}
+                      className="w-full accent-terracotta cursor-pointer"
+                    />
+                    <div className="flex justify-between text-[11px] text-linen/60 mt-1">
+                      <span>600 sq.ft</span>
+                      <span>2,000 sq.ft</span>
+                      <span>4,000 sq.ft</span>
+                    </div>
                   </div>
+
+                  <div>
+                    <label className="text-xs font-semibold uppercase tracking-wider text-linen/90 block mb-2">
+                      Finishing Specification:
+                    </label>
+                    <div className="grid grid-cols-2 gap-3">
+                      <button
+                        type="button"
+                        onClick={() => setSelectedPkg("vitrified")}
+                        className={`p-3 rounded-xl text-left border transition-all ${
+                          selectedPkg === "vitrified"
+                            ? "bg-white/25 border-terracotta text-white shadow-md"
+                            : "border-white/15 bg-white/5 text-linen/80"
+                        }`}
+                      >
+                        <p className="text-xs font-bold">Standard Vitrified</p>
+                        <p className="text-[11px] text-amber-200 font-semibold mt-0.5">₹1,950 / sq.ft</p>
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => setSelectedPkg("granite")}
+                        className={`p-3 rounded-xl text-left border transition-all ${
+                          selectedPkg === "granite"
+                            ? "bg-white/25 border-terracotta text-white shadow-md"
+                            : "border-white/15 bg-white/5 text-linen/80"
+                        }`}
+                      >
+                        <p className="text-xs font-bold">Standard Granite</p>
+                        <p className="text-[11px] text-amber-200 font-semibold mt-0.5">₹2,200 / sq.ft</p>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div className="border-t border-white/20 pt-5 space-y-3">
+                    <div className="flex items-baseline justify-between">
+                      <span className="text-xs text-linen/80 uppercase tracking-wider">
+                        Estimated Build Cost:
+                      </span>
+                      <span className="font-display text-3xl font-extrabold text-amber-200">
+                        ₹{estimatedCost}*
+                      </span>
+                    </div>
+                    <div className="flex items-center justify-between text-xs text-linen/80">
+                      <span>Estimated Construction Duration:</span>
+                      <span className="font-semibold text-white">{estimatedMonths} Months</span>
+                    </div>
+                  </div>
+
+                  <a
+                    href={calcWhatsappLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full sweep flex items-center justify-center gap-2 rounded-full bg-clay py-3.5 text-xs font-bold uppercase tracking-wider text-white shadow-lg transition-all hover:bg-terracotta hover:text-pine"
+                  >
+                    <MessageSquare className="size-4" />
+                    <span>Send This Estimate to WhatsApp</span>
+                  </a>
                 </div>
-
-                <div>
-                  <label className="text-xs font-semibold uppercase tracking-wider text-linen/80 block mb-2">
-                    Finishing Specification:
-                  </label>
-                  <div className="grid grid-cols-2 gap-3">
-                    <button
-                      type="button"
-                      onClick={() => setSelectedPkg("vitrified")}
-                      className={`p-3 rounded-xl text-left border transition-all ${
-                        selectedPkg === "vitrified"
-                          ? "bg-white/20 border-terracotta text-white shadow-md"
-                          : "border-white/10 bg-white/5 text-linen/70"
-                      }`}
-                    >
-                      <p className="text-xs font-bold">Standard Vitrified</p>
-                      <p className="text-[11px] text-amber-200 font-semibold mt-0.5">₹1,950 / sq.ft</p>
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => setSelectedPkg("granite")}
-                      className={`p-3 rounded-xl text-left border transition-all ${
-                        selectedPkg === "granite"
-                          ? "bg-white/20 border-terracotta text-white shadow-md"
-                          : "border-white/10 bg-white/5 text-linen/70"
-                      }`}
-                    >
-                      <p className="text-xs font-bold">Standard Granite</p>
-                      <p className="text-[11px] text-amber-200 font-semibold mt-0.5">₹2,200 / sq.ft</p>
-                    </button>
-                  </div>
-                </div>
-
-                <div className="border-t border-white/15 pt-5 space-y-3">
-                  <div className="flex items-baseline justify-between">
-                    <span className="text-xs text-linen/70 uppercase tracking-wider">
-                      Estimated Build Cost:
-                    </span>
-                    <span className="font-display text-3xl font-extrabold text-amber-200">
-                      ₹{estimatedCost}*
-                    </span>
-                  </div>
-                  <div className="flex items-center justify-between text-xs text-linen/70">
-                    <span>Estimated Construction Duration:</span>
-                    <span className="font-semibold text-white">{estimatedMonths} Months</span>
-                  </div>
-                </div>
-
-                <a
-                  href={calcWhatsappLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full sweep flex items-center justify-center gap-2 rounded-full bg-clay py-3.5 text-xs font-bold uppercase tracking-wider text-white shadow-lg transition-all hover:bg-terracotta hover:text-pine"
-                >
-                  <MessageSquare className="size-4" />
-                  <span>Send This Estimate to WhatsApp</span>
-                </a>
               </div>
             </div>
           </div>
@@ -879,7 +875,7 @@ function Home() {
       </section>
 
       {/* ─────────────────────────────────────────────────────────────
-          7. YOUR JOURNEY WITH US (#1F3630 PALETTE)
+          7. YOUR JOURNEY WITH US: #1F3630
       ───────────────────────────────────────────────────────────── */}
       <section className="py-24 bg-[#1F3630] px-6 lg:px-12 border-b border-white/10">
         <div className="max-w-7xl mx-auto">
@@ -914,59 +910,61 @@ function Home() {
       </section>
 
       {/* ─────────────────────────────────────────────────────────────
-          8. BOOK SITE VISIT & ENQUIRY (#1F3630 PALETTE)
+          8. BOOK SITE VISIT & ENQUIRY: ALTERNATE LIGHTER BG (#4B5E59)
       ───────────────────────────────────────────────────────────── */}
-      <section id="contact" className="py-24 px-6 lg:px-12 max-w-7xl mx-auto">
-        <div className="grid gap-12 lg:grid-cols-12 items-start">
-          <div className="lg:col-span-5">
-            <span className="text-xs font-bold uppercase tracking-[0.2em] text-terracotta">
-              Take the First Step
-            </span>
-            <h2 className="mt-2 font-display text-4xl sm:text-5xl font-bold tracking-tight text-white leading-tight">
-              Schedule Your Exclusive Site Visit
-            </h2>
-            <p className="mt-4 text-base text-linen/80 leading-relaxed">
-              Inspect our active plotted developments at Sai Roots Layout (Jigani), examine underground
-              infrastructure, or review floor plan drawings in person.
-            </p>
+      <section id="contact" className="py-24 px-6 lg:px-12 bg-[#4B5E59] text-linen">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid gap-12 lg:grid-cols-12 items-start">
+            <div className="lg:col-span-5">
+              <span className="text-xs font-bold uppercase tracking-[0.2em] text-amber-200">
+                Take the First Step
+              </span>
+              <h2 className="mt-2 font-display text-4xl sm:text-5xl font-bold tracking-tight text-white leading-tight">
+                Schedule Your Exclusive Site Visit
+              </h2>
+              <p className="mt-4 text-base text-linen/90 leading-relaxed">
+                Inspect our active plotted developments at Sai Roots Layout (Jigani), examine underground
+                infrastructure, or review floor plan drawings in person.
+              </p>
 
-            <div className="mt-8 space-y-4">
-              <div className="flex items-center gap-3 p-4 rounded-2xl bg-white/5 border border-white/10">
-                <Phone className="size-5 text-terracotta shrink-0" />
-                <div>
-                  <p className="text-xs uppercase tracking-wider text-linen/60 font-semibold">
-                    Direct Sales Hotline:
-                  </p>
-                  <a href={phoneTel} className="font-display text-lg font-bold text-white ln hover:text-terracotta">
-                    {phoneDisplay}
-                  </a>
+              <div className="mt-8 space-y-4">
+                <div className="flex items-center gap-3 p-4 rounded-2xl bg-[#1F3630]/75 border border-white/15 shadow-md">
+                  <Phone className="size-5 text-terracotta shrink-0" />
+                  <div>
+                    <p className="text-xs uppercase tracking-wider text-linen/70 font-semibold">
+                      Direct Sales Hotline:
+                    </p>
+                    <a href={phoneTel} className="font-display text-lg font-bold text-white ln hover:text-terracotta">
+                      {phoneDisplay}
+                    </a>
+                  </div>
                 </div>
-              </div>
 
-              <div className="flex items-center gap-3 p-4 rounded-2xl bg-white/5 border border-white/10">
-                <Calendar className="size-5 text-terracotta shrink-0" />
-                <div>
-                  <p className="text-xs uppercase tracking-wider text-linen/60 font-semibold">
-                    Site Visit Timings:
-                  </p>
-                  <p className="text-sm font-medium text-white">
-                    9:30 AM – 5:30 PM (Tuesday Holiday)
-                  </p>
+                <div className="flex items-center gap-3 p-4 rounded-2xl bg-[#1F3630]/75 border border-white/15 shadow-md">
+                  <Calendar className="size-5 text-terracotta shrink-0" />
+                  <div>
+                    <p className="text-xs uppercase tracking-wider text-linen/70 font-semibold">
+                      Site Visit Timings:
+                    </p>
+                    <p className="text-sm font-medium text-white">
+                      9:30 AM – 5:30 PM (Tuesday Holiday)
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div className="lg:col-span-7">
-            <div className="rounded-3xl border border-white/15 bg-[#243F38]/90 p-8 sm:p-10 shadow-2xl backdrop-blur-md">
-              <h3 className="font-display text-2xl font-bold text-white">
-                Send an Enquiry
-              </h3>
-              <p className="mt-1 text-xs text-linen/60 mb-6">
-                Our sales team reaches out during working hours to understand your requirements and
-                schedule your site visit.
-              </p>
-              <EnquiryForm tone="paper" />
+            <div className="lg:col-span-7">
+              <div className="rounded-3xl border border-white/20 bg-[#1F3630]/90 p-8 sm:p-10 shadow-2xl backdrop-blur-md">
+                <h3 className="font-display text-2xl font-bold text-white">
+                  Send an Enquiry
+                </h3>
+                <p className="mt-1 text-xs text-linen/70 mb-6">
+                  Our sales team reaches out during working hours to understand your requirements and
+                  schedule your site visit.
+                </p>
+                <EnquiryForm tone="paper" />
+              </div>
             </div>
           </div>
         </div>
