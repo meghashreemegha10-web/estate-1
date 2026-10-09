@@ -1,44 +1,159 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..700&family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,600&family=Satisfy&display=swap');
 
 @theme {
-  --color-paper: #f3e6d0;
-  --color-ink: #2a2118;
-  --color-clay: #9e3f1c;
-  --color-sage: #2f6b4a;
-  --color-ochre: #e2a23a;
-  --font-display: "Fraunces", "Iowan Old Style", Palatino, serif;
-  --font-sans: "Outfit", "Avenir Next", sans-serif;
-  --leading-display: 0.92;
-  --tracking-display: -0.03em;
+  --color-pine: #1F3630;
+  --color-moss: #2B4A41;
+  --color-ink: #1D322D;
+  --color-paper: #FDFCEE;
+  --color-parchment: #FFFEF2;
+  --color-linen: #FDFCEE;
+  --color-sand: #F7F6E9;
+  --color-clay: #FF7738;
+  --color-terracotta: #F3AC85;
+  --color-sage: #2B4A41;
+  --color-ochre: #E2A23A;
+  --font-display: "Fraunces", "Playfair Display", Georgia, serif;
+  --font-serif: "Playfair Display", "Cinzel", Georgia, serif;
+  --font-sans: "Outfit", "Inter", system-ui, sans-serif;
+  --font-script: "Satisfy", cursive;
+  --leading-display: 0.94;
+  --tracking-display: -0.025em;
   --aspect-photo: 3 / 2;
 }
 
 @layer base {
   html {
-    background: var(--color-sage);
-    color: var(--color-ink);
+    background: #FFFEF2;
+    color: #1D322D;
     font-family: var(--font-sans);
+    scroll-behavior: smooth;
   }
   body {
     margin: 0;
     min-height: 100dvh;
+    background: #FFFEF2;
+    color: #1D322D;
+    -webkit-font-smoothing: antialiased;
   }
   button:not(:disabled),
   [role="button"]:not(:disabled) {
     cursor: pointer;
   }
   ::selection {
-    background: var(--color-clay);
-    color: var(--color-paper);
+    background: #F3AC85;
+    color: #1D322D;
   }
   :focus-visible {
-    outline: 2px solid var(--color-ink);
+    outline: 2px solid #FF7738;
     outline-offset: 3px;
   }
 }
 
-.cover {
-  min-height: calc(100dvh - 4rem);
+/* Glassmorphism Styles */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
+}
+
+.glass-dark {
+  background: rgba(31, 54, 48, 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(243, 172, 133, 0.32);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.glass-card {
+  background: rgba(255, 254, 242, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(29, 50, 45, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.glass-card-dark {
+  background: rgba(43, 74, 65, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
+}
+
+/* Micro-interactions & PrettyHouse Animations */
+.zoom img {
+  transition: transform 1.2s cubic-bezier(.22,1,.36,1);
+}
+.zoom:hover img {
+  transform: scale(1.05);
+}
+
+.ln {
+  position: relative;
+}
+.ln::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  height: 1.5px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: 100% 50%;
+  transition: transform .5s cubic-bezier(.22,1,.36,1);
+}
+.ln:hover::after {
+  transform: scaleX(1);
+  transform-origin: 0 50%;
+}
+
+@keyframes v5-pulse {
+  0%, 100% { opacity: .4; transform: scale(.92); }
+  50% { opacity: 1; transform: scale(1.08); }
+}
+.dot {
+  animation: v5-pulse 1.6s ease-in-out infinite;
+}
+
+.sweep {
+  position: relative;
+  overflow: hidden;
+}
+.sweep::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, transparent 30%, rgba(255,254,242,.35) 50%, transparent 70%);
+  transform: translateX(-120%);
+  transition: transform .9s cubic-bezier(.22,1,.36,1);
+  pointer-events: none;
+}
+.sweep:hover::after {
+  transform: translateX(120%);
+}
+
+.arrow {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #FF7738;
+  color: #FFFEF2;
+  display: grid;
+  place-items: center;
+  transform: translateY(12px) scale(.8);
+  opacity: 0;
+  transition: transform .5s cubic-bezier(.22,1,.36,1), opacity .4s;
+}
+.zoom:hover .arrow {
+  transform: none;
+  opacity: 1;
 }
 
 @media (prefers-reduced-motion: reduce) {

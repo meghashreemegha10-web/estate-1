@@ -4,7 +4,7 @@
  *
  * `dev`, `build` and `preview` all route through this wrapper, so the dev
  * server, the built bundle and the preview server can never disagree about
- * `VITE_AUTH_ENABLED` — a divergence that only shows up as a built-output
+ * `VITE_AUTH_ENABLED` â€” a divergence that only shows up as a built-output
  * mismatch long after the fact. Anything that starts Vite directly bypasses it.
  *
  * Only `VITE_`-prefixed keys are honored: the file is a build flag carrier, not
@@ -31,7 +31,7 @@ const VITE_PREFIX = "VITE_";
 
 /**
  * Parse an app-env document, keeping only `VITE_`-prefixed string entries.
- * Anything unparseable is an empty environment — a workspace without the file
+ * Anything unparseable is an empty environment â€” a workspace without the file
  * must behave exactly like today (auth on, no overrides).
  */
 export function parseAppEnv(text) {
@@ -107,11 +107,11 @@ export function isMainModule(moduleUrl) {
 function main(argv) {
   const [command, ...args] = argv;
   if (!command) {
-    console.error("usage: node scripts/with-app-env.mjs <command> [args…]");
+    console.error("usage: node scripts/with-app-env.mjs <command> [argsâ€¦]");
     process.exit(2);
   }
   const env = mergeAppEnv(readAppEnv(projectRoot()), process.env);
-  const child = spawn(command, args, { stdio: "inherit", env });
+  const child = spawn(command, args, { stdio: "inherit", env, shell: true });
   // The dev server is long-running and is stopped by signalling this wrapper.
   for (const signal of ["SIGINT", "SIGTERM", "SIGHUP"]) {
     process.on(signal, () => child.kill(signal));
@@ -128,3 +128,4 @@ function main(argv) {
 if (isMainModule(import.meta.url)) {
   main(process.argv.slice(2));
 }
+
