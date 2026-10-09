@@ -1,0 +1,38 @@
+{
+  "url": "http://127.0.0.1:8081/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Global Mahanshi Builders | Construction Company & Residential Plots in Bengaluru",
+      "hasCanvas": false,
+      "bodyTextLen": 7311,
+      "bodyTextHash": "6779ed5f96b65bc26c2343428e6acbdb769929a8672f74510b82214af67d2198",
+      "bodyTextPrefix": "Global Mahanshi Builders Home About Us Services Projects Gallery",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Global Mahanshi Builders | Construction Company & Residential Plots in Bengaluru",
+      "hasCanvas": false,
+      "bodyTextLen": 7251,
+      "bodyTextHash": "e1479311f32557c5effd1e4304d44f21cd196780e74eed7f11fa4a85980b07a5",
+      "bodyTextPrefix": "Global Mahanshi Builders Construction · Residential Layouts · Be",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-built.json",
+  "divergesFromBaseline": false,
+  "baselineReasons": []
+}
